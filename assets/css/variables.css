@@ -1,0 +1,13 @@
+:root {
+    --nav-height-big: calc(6.75rem  + var(--rainbow-thickness));
+    --nav-height-small: var(--rainbow-thickness);
+
+    --rainbow-thickness: 4px;
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --nav-height-big: calc(8.1rem + var(--rainbow-thickness) + 2px);
+        --nav-height-small: calc(4.5rem + var(--rainbow-thickness) + 2px);
+    }
+}

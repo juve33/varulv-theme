@@ -1,0 +1,4 @@
+.wp-block-lupus-plugin-header.image-fixed .wp-block-lupus-plugin-header__image-container,
+.wp-block-lupus-plugin-section.image-fixed .wp-block-lupus-plugin-section__image-container {
+    background-position: 50% calc(50% + var(--nav-height-small)) !important;
+}
