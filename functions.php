@@ -90,6 +90,9 @@ function varulvtheme_register_styles() {
 
     $additional_stylesheets = array(
 
+        'blocks',
+        'main',
+        'templates',
         'variables',
 
     );
@@ -111,13 +114,30 @@ function varulvtheme_register_styles() {
         require_once ABSPATH . 'wp-admin/includes/plugin.php';
     }
 
-    $plugin_stylesheets = array(
+    $overwrite_plugin_stylesheets = array(
+        
+        array( 'simple-calendar', 'google-calendar-events/google-calendar-events.php' ),
+
+    );
+
+    $additional_plugin_stylesheets = array(
         
         array( 'lupus-plugin', 'lupus-plugin/lupus-plugin.php' ),
 
     );
 
-    foreach ( $plugin_stylesheets as $plugin_stylesheet ) :
+    foreach ( $overwrite_plugin_stylesheets as $plugin_stylesheet ) :
+
+        if ( is_plugin_active( $plugin_stylesheet[1] ) ) {
+
+            wp_dequeue_style( 'lupustheme-' . $plugin_stylesheet[0] );
+            wp_enqueue_style( 'varulvtheme-' . $plugin_stylesheet[0], get_stylesheet_directory_uri() . '/assets/css/' . $plugin_stylesheet[0]. '.css', array(), $version, 'all' );
+        
+        }
+
+    endforeach;
+
+    foreach ( $additional_plugin_stylesheets as $plugin_stylesheet ) :
 
         if ( is_plugin_active( $plugin_stylesheet[1] ) ) {
 

@@ -24,15 +24,23 @@ $(document).ready(function() {
 
     let lastScrollTop = $(this).scrollTop();
 
-    $('body').on('scroll', function() {
+    $(window).on('scroll', function() {
 
         let currentScrollTop = $(this).scrollTop();
-        nav_size(currentScrollTop > lastScrollTop && currentScrollTop > 128);
+        nav_size(currentScrollTop > lastScrollTop);
         lastScrollTop = currentScrollTop;
 
     });
 
-    $('.nav-brown, .nav-white').on('mouseenter', function() {
+	$('body').on('scroll', function() {
+
+        let currentScrollTop = $(this).scrollTop();
+        nav_size(currentScrollTop > lastScrollTop);
+        lastScrollTop = currentScrollTop;
+
+    });
+
+    $('.main-nav').on('mouseenter', function() {
 
 		$('.main-nav.small').removeClass("small");
 		$('.small .navigation li.open').removeClass("open");

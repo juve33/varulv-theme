@@ -2,3 +2,31 @@
 .wp-block-lupus-plugin-section.image-fixed .wp-block-lupus-plugin-section__image-container {
     background-position: 50% calc(50% + var(--nav-height-small)) !important;
 }
+
+.wp-block-lupus-plugin-subtitle {
+    width: unset;
+}
+
+.image h2:not(.wp-block-lupus-plugin-subtitle+h2)::after,
+.image h3:not(.wp-block-lupus-plugin-subtitle+h3)::after,
+.image h4:not(.wp-block-lupus-plugin-subtitle+h4)::after,
+.image h5:not(.wp-block-lupus-plugin-subtitle+h5)::after,
+.wp-block-lupus-plugin-subtitle::after {
+    content: unset;
+}
+
+@media (min-width: 768px) {
+    .wp-block-lupus-plugin-subtitle {
+        width: 67%;
+    }
+
+    .wp-block-lupus-plugin-subtitle::after {
+        content: '';
+    }
+}
+
+@media (min-width: 1024px) {
+    .wp-block-lupus-plugin-subtitle {
+        width: 60%;
+    }
+}

@@ -3,11 +3,14 @@
     --nav-height-small: var(--rainbow-thickness);
 
     --rainbow-thickness: 4px;
+    --line-thickness: 2px;
+
+    --emphasized-letterspacing: 0px;
 }
 
 @media (min-width: 1024px) {
     :root {
-        --nav-height-big: calc(8.1rem + var(--rainbow-thickness) + 2px);
-        --nav-height-small: calc(4.5rem + var(--rainbow-thickness) + 2px);
+        --nav-height-big: calc(8.1rem + var(--rainbow-thickness) + var(--line-thickness));
+        --nav-height-small: calc(4.5rem + var(--rainbow-thickness) + var(--line-thickness));
     }
 }
