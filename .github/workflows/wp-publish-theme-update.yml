@@ -12,4 +12,4 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: juve33/workflows/.github/workflows/wp-publish-theme-update.yml@main
+      - uses: juve33/.github/.github/workflows/wp-publish-theme-update.yml@main
